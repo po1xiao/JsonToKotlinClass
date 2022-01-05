@@ -1,6 +1,7 @@
 package extensions
 
 import extensions.chen.biao.KeepAnnotationSupport
+import extensions.jasper.jiao.JvmOverloadsSupport
 import extensions.jose.han.ParcelableAnnotationSupport
 import extensions.ted.zeng.PropertyAnnotationLineSupport
 import extensions.wu.seal.*
@@ -37,5 +38,6 @@ object ExtensionsCollector {
         NeedNonNullableClassesSupport,
         InternalModifierSupport,
         AddGsonExposeAnnotationSupport,
+        JvmOverloadsSupport,
     )
 }
