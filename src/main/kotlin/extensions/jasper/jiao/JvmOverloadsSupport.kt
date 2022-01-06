@@ -13,7 +13,7 @@ import javax.swing.JPanel
 /**
  * @author Jasper Jiao
  * create at 2022/1/5
- * description: 当通过Gson填充Kotlin data class的时候，json中为null的数据无法通过data class默认值赋值，
+ * description: 当通过Gson填充Kotlin data class的时候，json中为没有而data class有的数据无法通过data class默认值赋值，
  * 通过添加JvmOverloads注解来添加初始值，该配置需要通过DefaultValueStrategy.AvoidNull来配合生效。
  * 具体原理请查看这篇文章：https://juejin.cn/post/6908391430977224718
  * default:
@@ -38,7 +38,7 @@ object JvmOverloadsSupport : Extension() {
     const val configKey = "jasper.jiao.add_jvm_overload_annotation_enable"
     override fun createUI(): JPanel {
         return jHorizontalLinearLayout {
-            jCheckBox("Add JvmOverloads Annotation For Constructor(Avoid Null For Gson Fill)",
+            jCheckBox("Add JvmOverloads Annotation For Constructor",
                 getConfig(configKey).toBoolean(), { isSelected ->
                     setConfig(configKey, isSelected.toString())
                     ConfigManager.defaultValueStrategy = DefaultValueStrategy.AvoidNull
